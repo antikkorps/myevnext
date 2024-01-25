@@ -5,12 +5,13 @@ import { ModeToggle } from "@/components/ui/toggle"
 function Navbar() {
   return (
     <>
-      <div>Navbar</div>
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
-      <ModeToggle />
+      <div className="navbarContainer">
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <ModeToggle />
+      </div>
     </>
   )
 }
