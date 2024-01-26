@@ -3,7 +3,7 @@ import React from "react"
 function Dashboard() {
   return (
     <>
-      <div className="py-5">This is the Dashboard</div>
+      <div className="sm:py-5">This is the Dashboard</div>
     </>
   )
 }

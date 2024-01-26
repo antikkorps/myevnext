@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import Navbar from "@/components/Navbar"
+import NavbarMobile from "@/components/NavbarMobile"
 
 import "./globals.css"
 
@@ -30,7 +31,7 @@ export default function RootLayout({
           <nav>
             <Navbar />
           </nav>
-          {children}{" "}
+          {children} <NavbarMobile />
         </ThemeProvider>
       </body>
     </html>

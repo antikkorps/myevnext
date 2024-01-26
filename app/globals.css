@@ -114,6 +114,12 @@
 
 @layer components {
   .navbarContainer {
-    @apply flex items-center justify-around px-4 py-5 bg-white dark:bg-white dark:bg-opacity-5 backdrop-blur fixed z-10 w-full;
+    @apply hidden sm:flex items-center justify-around px-4 py-5 bg-white dark:bg-white dark:bg-opacity-5 backdrop-blur fixed z-10 w-full;
+  }
+  .mobileNavbarContainer {
+    @apply sm:hidden flex bottom-0 left-0 justify-around px-4 py-5 bg-white dark:bg-white dark:bg-opacity-5 backdrop-blur fixed z-10 w-full;
+  }
+  .iconClass {
+    @apply text-foreground hover:text-blue-400;
   }
 }
