@@ -1,7 +1,8 @@
 "use client"
+import Link from "next/link"
 import { useState } from "react"
 
-import { HomeIcon, User, SquarePenIcon, Settings2 } from "lucide-react"
+import { HomeIcon, User, SquarePenIcon, Settings2, Search } from "lucide-react"
 
 export default function NavbarMobile() {
   const [selectedIcon, setSelectedIcon] = useState<String | null>(null)
@@ -16,16 +17,30 @@ export default function NavbarMobile() {
   return (
     <>
       <div className="mobileNavbarContainer">
-        <HomeIcon className={iconClass("Home")} onClick={() => handleIconClick("Home")} />
-        <User className={iconClass("User")} onClick={() => handleIconClick("User")} />
-        <SquarePenIcon
-          className={iconClass("SquarePen")}
-          onClick={() => handleIconClick("SquarePen")}
-        />
-        <Settings2
-          className={iconClass("Settings2")}
-          onClick={() => handleIconClick("Settings2")}
-        />
+        <Link href="/">
+          <HomeIcon
+            className={iconClass("Home")}
+            onClick={() => handleIconClick("Home")}
+          />
+        </Link>
+        <Link href="/search">
+          <Search className={iconClass("User")} onClick={() => handleIconClick("User")} />
+        </Link>
+        <Link href="/profile">
+          <User className={iconClass("User")} onClick={() => handleIconClick("User")} />
+        </Link>
+        <Link href="/create">
+          <SquarePenIcon
+            className={iconClass("SquarePen")}
+            onClick={() => handleIconClick("SquarePen")}
+          />
+        </Link>
+        <Link href="/params">
+          <Settings2
+            className={iconClass("Settings2")}
+            onClick={() => handleIconClick("Settings2")}
+          />
+        </Link>
       </div>
     </>
   )

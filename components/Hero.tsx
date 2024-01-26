@@ -1,6 +1,8 @@
+import Link from "next/link"
+
 export default function Hero() {
   return (
-    <div className="relative isolate px-6 lg:px-8 h-full">
+    <div className="relative isolate px-6 lg:px-8 py-20 h-full">
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
@@ -33,18 +35,18 @@ export default function Hero() {
             comptes-rendus à vos participants de façon simple et efficace.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
+            <Link
+              href="/login"
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Se connecter
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/about"
               className="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
             >
               en savoir plus <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
