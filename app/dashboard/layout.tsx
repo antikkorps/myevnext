@@ -5,7 +5,7 @@ export default function DashboardLayout({
 }) {
   return (
     <section>
-      <nav> This is the Dashboard layout</nav>
+      <nav className="pt-24"> This is the Dashboard layout</nav>
 
       {children}
     </section>

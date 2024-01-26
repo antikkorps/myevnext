@@ -1,11 +1,9 @@
 import React from "react"
-import Navbar from "@/components/Navbar"
 
 function Dashboard() {
   return (
     <>
-      <Navbar />
-      <div>This is the Dashboard</div>
+      <div className="py-5">This is the Dashboard</div>
     </>
   )
 }
