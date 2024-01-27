@@ -15,7 +15,7 @@ const tiers = [
     href: "#",
     price: { monthly: "€15", annually: "€144" },
     description: "L'essentiel pour apporter un service de qualité à vos clients.",
-    features: ["5 formulaires actifs", "Jusqu'à 1,000 entrées", "Basic analytics"],
+    features: ["5 formulaires actifs", "Jusqu'à 1,000 entrées", "Statistiques basiques"],
     mostPopular: false,
   },
   {
@@ -28,7 +28,7 @@ const tiers = [
     features: [
       "10 formulaires actifs",
       "Jusqu'à 5,000 entrées",
-      "Basic analytics",
+      "Statistiques basiques",
       "Réponse du support sous 48-heures",
     ],
     mostPopular: false,
@@ -42,7 +42,7 @@ const tiers = [
     features: [
       "25 formulaires actifs",
       "Up to 10,000 entrées",
-      "Advanced analytics",
+      "Statistiques avancées",
       "Réponse du support sous 24-heures",
       "Automatisation avancée",
     ],
@@ -57,7 +57,7 @@ const tiers = [
     features: [
       "formulaires illimités",
       "entrées illimités",
-      "Advanced analytics",
+      "Statistiques avancées",
       "Réponse du support sous 1-heure",
       "Automatisation avancée",
       "Outils de reporting personnalisés",
