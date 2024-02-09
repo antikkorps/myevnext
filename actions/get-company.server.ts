@@ -1,3 +1,4 @@
+import { API_ENDPOINTS } from "../config/apiEndpoints"
 interface Company {
   id: string
   name: string
@@ -8,7 +9,7 @@ interface Company {
 
 export async function getCompanies() {
   try {
-    const response = await fetch(API_ENDPOINTS.POSTS)
+    const response = await fetch(API_ENDPOINTS.COMPANIES)
     const data: Company[] = await response.json()
     console.log("Réponse de l'API:", data)
     return data

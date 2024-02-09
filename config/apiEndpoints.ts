@@ -12,4 +12,9 @@ export const API_ENDPOINTS = {
   USERS: `${BASE_URL}/users/all`,
   USERS_PROFILE: `${BASE_URL}/users/me`,
   USER_BY_ID: `${BASE_URL}/users/`,
+
+  //COMPANY RELATED
+  COMPANIES: `${BASE_URL}/companies/all`,
+  COMPANY_BY_ID: `${BASE_URL}/companies/`,
+  COMPANY_BY_USER_ID: `${BASE_URL}/companies/user/`,
 }
