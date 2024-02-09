@@ -1,1 +1,1 @@
-export * from "./get-company-server"
+export * from "./get-company.server"
