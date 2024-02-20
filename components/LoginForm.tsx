@@ -1,8 +1,31 @@
 "use client"
 import Link from "next/link"
 import { Waves } from "lucide-react"
+import { useState } from "react"
+import { API_ENDPOINTS } from "@/config/apiEndpoints"
 
-export default function LoginForm() {
+export async function LoginForm() {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+  }
+
+  const response = await fetch(`${API_ENDPOINTS.LOGIN}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, password }),
+  })
+
+  const data = await response.json()
+  if (response.ok) {
+    localStorage.setItem("access_token", data.access_token)
+  } else {
+    console.error(data.error)
+  }
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-32 lg:py-52 lg:px-8">
@@ -14,7 +37,7 @@ export default function LoginForm() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
@@ -27,6 +50,8 @@ export default function LoginForm() {
                   id="email"
                   name="email"
                   type="email"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   autoComplete="email"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -56,6 +81,8 @@ export default function LoginForm() {
                   id="password"
                   name="password"
                   type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   autoComplete="current-password"
                   required
                   className="block w-full rounded-md border-0 py-1.5 dark:text-white text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
