@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Waves } from "lucide-react"
 import { useState } from "react"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { API_ENDPOINTS } from "@/config/apiEndpoints"
 
 export async function LoginForm() {
