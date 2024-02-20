@@ -1,26 +1,45 @@
+"use server"
 import { API_ENDPOINTS } from "../config/apiEndpoints"
 
-interface User {
-  id: string
-  username: string
-  email: string
-  role: string
-}
+import { cookies } from "next/headers"
+import { getSessionCookie } from "@/lib/auth-header"
 
-export async function getUser(user: User): Promise<User> {
+export async function getUser() {
+  const { name, value } = await getSessionCookie()
+  let user = null
   try {
-    const response = await fetch(API_ENDPOINTS.USERS_PROFILE, {
+    const response = await fetch(`${API_ENDPOINTS.USERS_PROFILE}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${user.id}`,
+        Cookie: `${name}=${value}`,
       },
+      credentials: "include",
     })
-    const data: User = await response.json()
-    console.log("Réponse de l'API:", data)
-    return data
+    if (!response.ok) {
+      return {
+        error: {
+          code: response.status,
+          message: "Auth Error",
+        },
+      }
+    }
+
+    user = await response.json()
   } catch (error) {
-    console.error("Erreur lors de la récupération de l'utilisateur:", error)
-    throw error
+    return {
+      error: {
+        code: 500,
+        message: "Serveur down",
+      },
+    }
   }
+  return {
+    user: user,
+  }
+}
+
+export async function checkRoles(roles: { roleSlug: string }[], toCheck: string) {
+  const roleSlugs = roles.map((role) => role.roleSlug)
+  return roleSlugs.includes(toCheck)
 }

@@ -14,7 +14,14 @@ export const API_ENDPOINTS = {
   USER_BY_ID: `${BASE_URL}/users/`,
 
   //COMPANY RELATED
-  COMPANIES: `${BASE_URL}/companies/all`,
-  COMPANY_BY_ID: `${BASE_URL}/companies/`,
-  COMPANY_BY_USER_ID: `${BASE_URL}/companies/user/`,
+  COMPANIES: `${BASE_URL}/entreprise/all`,
+  COMPANY_BY_ID: `${BASE_URL}/entreprise/`,
+  COMPANY_BY_USER_ID: `${BASE_URL}/entreprise/user/`,
+
+  //EVALUATION RELATED
+  EVALUATIONS: `${BASE_URL}/evaluation/all`,
+  EVALUATION_BY_ID: `${BASE_URL}/evaluation/`,
+  EVALUATION_BY_COMPANY_ID: `${BASE_URL}/evaluation/entreprise/`,
+  EVALUATION_BY_USER_ID: `${BASE_URL}/evaluation/user/`,
+  EVALUATION_BY_USER_AND_COMPANY_ID: `${BASE_URL}/evaluation/user/entreprise/`,
 }
