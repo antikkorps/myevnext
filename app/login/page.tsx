@@ -1,5 +1,5 @@
-import LoginForm from "@/components/LoginForm"
-export default function Login() {
+import { LoginForm } from "@/components/LoginForm"
+export default async function Login() {
   return (
     <>
       <LoginForm />

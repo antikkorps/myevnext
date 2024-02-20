@@ -1,12 +1,13 @@
-"use client"
 import Link from "next/link"
 import { Waves } from "lucide-react"
 import { useState } from "react"
+import { useRouter } from "next/router"
 import { API_ENDPOINTS } from "@/config/apiEndpoints"
 
 export async function LoginForm() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const router = useRouter()
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
@@ -23,6 +24,7 @@ export async function LoginForm() {
   const data = await response.json()
   if (response.ok) {
     localStorage.setItem("access_token", data.access_token)
+    router.push("/dashboard")
   } else {
     console.error(data.error)
   }
