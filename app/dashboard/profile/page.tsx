@@ -1,3 +1,4 @@
+"use client"
 import { Fragment, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import {
@@ -29,9 +30,8 @@ export default function Profile() {
   //get the user profile
 
   return
-
   ;<>
-    <main>
+    <div>
       <h1 className="sr-only">Account Settings</h1>
 
       <header className="border-b border-white/5">
@@ -338,6 +338,6 @@ export default function Profile() {
           </form>
         </div>
       </div>
-    </main>
+    </div>
   </>
 }
