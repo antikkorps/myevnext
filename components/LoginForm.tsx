@@ -1,32 +1,24 @@
+"use client"
 import Link from "next/link"
 import { Waves } from "lucide-react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { API_ENDPOINTS } from "@/config/apiEndpoints"
+import { login } from "@/auth/auth"
 
-export async function LoginForm() {
-  const [username, setUsername] = useState("")
+export function LoginForm() {
+  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const router = useRouter()
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-  }
 
-  const response = await fetch(`${API_ENDPOINTS.LOGIN}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ username, password }),
-  })
-
-  const data = await response.json()
-  if (response.ok) {
-    localStorage.setItem("access_token", data.access_token)
-    router.push("/dashboard")
-  } else {
-    console.error(data.error)
+    try {
+      await login(email, password)
+      router.push("/dashboard")
+    } catch (error) {
+      console.error("An unexpected error happened:", error)
+    }
   }
   return (
     <>
@@ -52,8 +44,8 @@ export async function LoginForm() {
                   id="email"
                   name="email"
                   type="email"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

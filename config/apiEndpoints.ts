@@ -2,7 +2,7 @@ const BASE_URL = process.env.BASE_URL
 
 export const API_ENDPOINTS = {
   //AUTH RELATED
-  LOGIN: `${BASE_URL}/auth/signin`,
+  LOGIN: `${BASE_URL}/auth/login`,
   REGISTER: `${BASE_URL}/auth/signup`,
   LOGOUT: `${BASE_URL}/auth/logout`,
   FORGOTTEN_PASSWORD: `${BASE_URL}/auth/forgotten-password`,
