@@ -1,8 +1,5 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-
-import "../globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -12,14 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function LoginLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <section>{children}</section>
-    </ThemeProvider>
-  )
+  return <section>{children}</section>
 }
