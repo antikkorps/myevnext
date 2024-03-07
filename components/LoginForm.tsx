@@ -1,21 +1,27 @@
 "use client"
 import Link from "next/link"
 import { Waves } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { login } from "@/auth/auth"
+import { useAuth } from "@/app/auth-context"
 
 export function LoginForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const { user, login } = useAuth()
   const router = useRouter()
+
+  useEffect(() => {
+    if (user) {
+      router.push("/myevaluation/dashboard")
+    }
+  }, [user, router])
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
 
     try {
       await login(email, password)
-      router.push("/myevaluation/dashboard")
     } catch (error) {
       console.error("An unexpected error happened:", error)
     }
