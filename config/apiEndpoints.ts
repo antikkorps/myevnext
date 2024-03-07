@@ -1,4 +1,5 @@
 const BASE_URL = process.env.BASE_URL
+const PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 export const API_ENDPOINTS = {
   //AUTH RELATED
@@ -9,9 +10,10 @@ export const API_ENDPOINTS = {
   RESET_PASSWORD: `${BASE_URL}/auth/reset-password`,
 
   //USER RELATED
-  USERS: `${BASE_URL}/users/all`,
-  USERS_PROFILE: `${BASE_URL}/users/me`,
-  USER_BY_ID: `${BASE_URL}/users/`,
+  USERS: `${BASE_URL}/user/all`,
+  USERS_PROFILE: `${BASE_URL}/user/myprofile`,
+  PUBLIC_USERS_PROFILE: `${PUBLIC_BASE_URL}/user/myprofile`,
+  USER_BY_ID: `${BASE_URL}/user/`,
 
   //COMPANY RELATED
   COMPANIES: `${BASE_URL}/entreprise/all`,

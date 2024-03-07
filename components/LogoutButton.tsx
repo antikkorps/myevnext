@@ -1,10 +1,12 @@
 "use client"
 import { Button } from "./ui/button"
-import { logout } from "@/auth/auth"
 import { useRouter } from "next/navigation"
+import { useAuth } from "@/app/auth-context"
 
 export function LogoutButton() {
   const router = useRouter()
+  const { user, logout } = useAuth()
+
   const handleLogout = async () => {
     try {
       await logout()
