@@ -11,7 +11,7 @@ export default function DashboardLayout({
             This is the Dashboard Layout
           </h2>
         </div>
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">{children}</div>
+        <div className="mt-10 sm:mx-auto sm:w-full sm:h-full sm:max-w-lg">{children}</div>
       </div>
     </>
   )
