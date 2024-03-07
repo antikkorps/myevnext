@@ -15,7 +15,7 @@ export function LoginForm() {
 
     try {
       await login(email, password)
-      router.push("/dashboard")
+      router.push("/myevaluation/dashboard")
     } catch (error) {
       console.error("An unexpected error happened:", error)
     }
