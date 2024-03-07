@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/components/Navbar"
+import NavbarMobile from "@/components/NavbarMobile"
 
 import "../globals.css"
 
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   description: "A site to help you evaluate whatever you want to evaluate.",
 }
 
-export default function LoginLayout({ children }: { children: React.ReactNode }) {
+export default function HomeLayout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"
@@ -19,7 +21,13 @@ export default function LoginLayout({ children }: { children: React.ReactNode })
       enableSystem
       disableTransitionOnChange
     >
-      <section>{children}</section>
+      <section>
+        <nav>
+          <Navbar />
+        </nav>
+        <NavbarMobile />
+        {children}
+      </section>
     </ThemeProvider>
   )
 }
