@@ -1,4 +1,4 @@
-import LoginLayout from "./layout"
+import LoginLayout from "../layout"
 import { LoginForm } from "@/components/LoginForm"
 
 export default async function Login() {
