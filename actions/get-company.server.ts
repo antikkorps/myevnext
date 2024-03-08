@@ -5,7 +5,7 @@ import { cookies } from "next/headers"
 
 export async function getCompanies(): Promise<Company[]> {
   const cookieStore = cookies()
-  const token = cookieStore.get(process.env.NEXT_PUBLIC_SESSION_COOKIE)?.value
+  const token = cookieStore.get(process.env.NEXT_PUBLIC_SESSION_COOKIE as string)?.value
   try {
     const response = await fetch(API_ENDPOINTS.COMPANIES, {
       headers: {
