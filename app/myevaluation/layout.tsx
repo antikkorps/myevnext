@@ -21,13 +21,11 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
       enableSystem
       disableTransitionOnChange
     >
-      <section>
-        <nav>
-          <Navbar />
-        </nav>
-        <NavbarMobile />
-        {children}
-      </section>
+      <nav>
+        <Navbar />
+      </nav>
+      <NavbarMobile />
+      <section>{children}</section>
     </ThemeProvider>
   )
 }
