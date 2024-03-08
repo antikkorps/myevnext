@@ -16,7 +16,7 @@ export type Company = {
   name: string
   address: string
   city: string
-  zipCode: string
+  zipcode: string
   country: String
   logo: String
   // contrats: Contrat[]

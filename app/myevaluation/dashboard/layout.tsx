@@ -6,12 +6,14 @@ export default function DashboardLayout({
   return (
     <>
       <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-32 lg:py-52 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900 dark:text-white">
             This is the Dashboard Layout
           </h2>
         </div>
-        <div className="mt-10 sm:mx-auto sm:w-full sm:h-full sm:max-w-lg">{children}</div>
+        <div className="mt-10 sm:mx-auto sm:w-full sm:h-full sm:max-w-3xl">
+          {children}
+        </div>
       </div>
     </>
   )

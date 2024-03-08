@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "tailwindui.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+        pathname: "/**",
+      },
     ],
   },
 }
