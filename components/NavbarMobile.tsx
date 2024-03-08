@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 
 export default function NavbarMobile() {
   const [selectedIcon, setSelectedIcon] = useState<String | null>(null)
-  const { user, checkUser, login, logout } = useAuth()
+  const { user, checkUser, logout } = useAuth()
   const router = useRouter()
 
   const handleIconClick = (iconName: String) => {

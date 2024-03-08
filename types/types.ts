@@ -10,3 +10,16 @@ export type AuthContextType = {
   login: (email: string, password: string) => Promise<void>
   logout: () => Promise<void>
 }
+
+export type Company = {
+  id: string
+  name: string
+  address: string
+  city: string
+  zipCode: string
+  country: String
+  logo: String
+  // contrats: Contrat[]
+  users: User[]
+  // forms:     Form[]
+}
