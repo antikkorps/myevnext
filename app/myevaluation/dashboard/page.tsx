@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import { useAuth } from "@/app/auth-context"
 
 import AdminCardClients from "@/components/AdminCardClients"
+import AdminCardEvaluations from "@/components/AdminCardEvaluations"
 
 function Dashboard() {
   const { user } = useAuth()
@@ -23,7 +24,11 @@ function Dashboard() {
     <>
       <div className="sm:py-5">This is the Dashboard page</div>
 
-      <AdminCardClients />
+      <div className="sm:flex w-full">
+        <AdminCardClients />
+
+        <AdminCardEvaluations />
+      </div>
     </>
   )
 }

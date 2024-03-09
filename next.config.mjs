@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: "via.placeholder.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "daisyui.com",
+        pathname: "/**",
+      },
     ],
   },
 }
