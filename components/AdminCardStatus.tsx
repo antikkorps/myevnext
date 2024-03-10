@@ -18,7 +18,7 @@ export default function AdminCardStatus() {
           ></path>
         </svg>
       </div>
-      <div className="stat-title">New Registers</div>
+      <div className="stat-title">Evaluations à envoyer</div>
       <div className="stat-value">1,200</div>
       <div className="stat-desc">↘︎ 90 (14%)</div>
     </div>

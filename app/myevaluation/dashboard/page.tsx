@@ -5,6 +5,7 @@ import { useAuth } from "@/app/auth-context"
 
 import AdminCardClients from "@/components/AdminCardClients"
 import AdminCardEvaluations from "@/components/AdminCardEvaluations"
+import AdminCardStatus from "@/components/AdminCardStatus"
 
 function Dashboard() {
   const { user } = useAuth()
@@ -28,6 +29,8 @@ function Dashboard() {
         <AdminCardClients />
 
         <AdminCardEvaluations />
+
+        <AdminCardStatus />
       </div>
     </>
   )
