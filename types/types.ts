@@ -4,6 +4,8 @@ export type User = {
   // Ajoutez d'autres propriétés selon vos besoins
 }
 
+export type UserState = { user?: any; error?: { code: number; message: string } }
+
 export type AuthContextType = {
   user: User | null
   checkUser: () => Promise<void>
