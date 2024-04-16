@@ -25,7 +25,7 @@ function Dashboard() {
     <>
       <div className="sm:py-5">This is the Dashboard page</div>
 
-      <div className="stats shadow ">
+      <div className="stats shadow sm:grid grid-flow-col overflow-auto flex flex-col">
         <AdminCardClients />
 
         <AdminCardEvaluations />
